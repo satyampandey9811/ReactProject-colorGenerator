@@ -1,6 +1,6 @@
 ## link of the website
 
-https://satyampandey-9-color-generator.herokuapp.com/
+https://satyampandey-color-generator.herokuapp.com/
 
 #### Values JS
 
