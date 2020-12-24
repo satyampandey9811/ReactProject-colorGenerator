@@ -34,7 +34,7 @@ function App() {
             type="text"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            placeholder="#dc143c"
+            placeholder="#dc143c or crimson"
             className={`${error ? "error" : null}`}
           />
           <button type="submit" className="btn">
