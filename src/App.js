@@ -24,6 +24,10 @@ function App() {
     inputRef.current.focus();
   }, []);
 
+  const style = {
+    backgroundColor: color,
+  };
+
   return (
     <>
       <section className="container">
@@ -37,10 +41,19 @@ function App() {
             placeholder="#dc143c or crimson"
             className={`${error ? "error" : null}`}
           />
-          <button type="submit" className="btn">
-            Submit
-          </button>
         </form>
+        <form onChange={handleSubmit}>
+          <input
+            type="color"
+            className="color-picker"
+            onChange={(e) => setColor(e.target.value)}
+            style={style}
+            // onChange={handleSubmit}
+          />
+        </form>
+        <button type="submit" className="btn">
+          Submit
+        </button>
       </section>
       <section className="colors">
         {list.map((color, index) => {
