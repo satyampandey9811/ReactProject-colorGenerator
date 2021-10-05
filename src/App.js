@@ -9,20 +9,19 @@ function App() {
   const [list, setList] = useState(new Values("crimson").all(10));
   const inputRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  useEffect(() => {
     try {
       let colors = new Values(color).all(10);
       setError(false);
       setList(colors);
     } catch (error) {
-      setError(true);
+      setError(false);
     }
-  };
-
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
+  }, [color]);
 
   const style = {
     backgroundColor: color,
@@ -32,28 +31,21 @@ function App() {
     <>
       <section className="container">
         <h3>Color generator</h3>
-        <form onSubmit={handleSubmit}>
-          <input
-            ref={inputRef}
-            type="text"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-            placeholder="#dc143c or crimson"
-            className={`${error ? "error" : null}`}
-          />
-        </form>
-        <form onChange={handleSubmit}>
-          <input
-            type="color"
-            className="color-picker"
-            onChange={(e) => setColor(e.target.value)}
-            style={style}
-            // onChange={handleSubmit}
-          />
-        </form>
-        <button type="submit" className="btn">
-          Submit
-        </button>
+        <input
+          ref={inputRef}
+          type="text"
+          value={color}
+          onChange={(e) => setColor(e.target.value)}
+          placeholder="#dc143c or crimson"
+          className={`${error ? "error" : null} type`}
+        />
+        or
+        <input
+          type="color"
+          className="color-picker"
+          onChange={(e) => setColor(e.target.value)}
+          style={style}
+        />
       </section>
       <section className="colors">
         {list.map((color, index) => {

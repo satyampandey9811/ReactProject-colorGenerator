@@ -170,6 +170,9 @@ input {
   color: var(--clr-white);
   cursor: pointer;
 }
+.type {
+  margin-right: 1rem;
+}
 .color-picker {
   padding: 1.2rem 1rem;
   margin-left: 1rem;
@@ -184,10 +187,14 @@ input {
   .btn {
     font-size: 0.85rem;
   }
+  .type {
+    margin-right: 0.4rem;
+    padding: 0.5rem 0rem;
+  }
   .color-picker {
     padding: 1.04rem 1rem;
     margin-top: 0.4rem;
-    margin-left: 0.5rem;
+    margin-left: 0.4rem;
     margin-right: 0.5rem;
   }
 }
