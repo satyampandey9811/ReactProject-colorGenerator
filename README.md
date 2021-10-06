@@ -1,6 +1,6 @@
 ## link of the website
 
-https://satyampandey-color-generator.netlify.app/
+https://color-hex-generator.netlify.app/
 
 #### Values JS
 
